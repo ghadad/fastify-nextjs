@@ -18,7 +18,7 @@
     "jest": "cross-env NODE_ENV=test jest --watch",
     "serve": "npm run build:prod && cross-env NODE_ENV=production node example.js",
     "test": "npm run build:prod && standard && cross-env NODE_ENV=production tap test.js",
-    "now-build": "npm run server"
+    "now-build": "npm run serve"
   },
   "repository": {
     "type": "git",

@@ -2,23 +2,17 @@
   "name": "fastify-nextjs",
   "version": "4.0.0",
   "description": "React server side rendering support for Fastify with Next",
-  "main": "example.js",
+  "main": "server.js",
   "engines": {
     "node": ">=8"
-  },
-  "standard": {
-    "ignore": [
-      "*.jsx"
-    ]
   },
   "scripts": {
     "build": "next build",
     "build:prod": "cross-env NODE_ENV=production next build",
-    "dev": "node example.js",
+    "dev": "node server.js",
     "jest": "cross-env NODE_ENV=test jest --watch",
-    "serve": "npm run build:prod && cross-env NODE_ENV=production node example.js",
-    "test": "npm run build:prod && standard && cross-env NODE_ENV=production tap test.js",
-    "now-build": "npm run serve"
+    "serve": "yarn build:prod && cross-env NODE_ENV=production node server.js",
+    "test": "yarn build:prod && cross-env NODE_ENV=production tap test.js"
   },
   "repository": {
     "type": "git",

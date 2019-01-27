@@ -1,7 +1,3 @@
-import React from 'react'
+import React from "react";
 
-export default () => (
-  <p>
-    Loaded Hello2 Component
-  </p>
-)
+export default () => <p>Loaded Hello2 Component</p>;

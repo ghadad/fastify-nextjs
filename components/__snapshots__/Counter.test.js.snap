@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`With Snapshot Testing Counter shows up 1`] = `
+Array [
+  <button
+    className="incr"
+    onClick={[Function]}
+  >
+    +
+  </button>,
+  <button
+    className="decr"
+    onClick={[Function]}
+  >
+    -
+  </button>,
+  <p
+    className="count"
+  >
+    0
+  </p>,
+]
+`;

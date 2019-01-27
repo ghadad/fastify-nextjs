@@ -15,10 +15,9 @@
     "build": "next build",
     "build:prod": "cross-env NODE_ENV=production next build",
     "dev": "node example.js",
-    "jest": "cross-env NODE_ENV=test jest",
+    "jest": "cross-env NODE_ENV=test jest --watch",
     "serve": "npm run build:prod && cross-env NODE_ENV=production node example.js",
-    "test": "npm run build:prod && standard && cross-env NODE_ENV=production tap test.js && npm run typescript",
-    "typescript": "tsc --project ./tsconfig.json"
+    "test": "npm run build:prod && standard && cross-env NODE_ENV=production tap test.js"
   },
   "repository": {
     "type": "git",
@@ -49,17 +48,16 @@
     "babel-core": "^6.26.3",
     "babel-jest": "^24.0.0",
     "cross-env": "^5.2.0",
-    "enzyme": "^3.8.0",
-    "enzyme-adapter-react-16": "^1.8.0",
-    "fastify": "^1.13.1",
+    "fastify": "^2.0.0-rc.4",
     "jest": "^24.0.0",
-    "next": "^7.0.2",
-    "react": "^16.6.3",
-    "react-addons-test-utils": "^15.6.2",
-    "react-dom": "^16.6.3",
-    "react-test-renderer": "^16.7.0",
+    "jest-dom": "^3.0.1",
+    "next": "^8.0.0-canary.15",
+    "react": "^16.8.0-alpha.1",
+    "react-addons-test-utils": "^16.0.0-alpha.3",
+    "react-dom": "^16.8.0-alpha.1",
+    "react-test-renderer": "^16.8.0-alpha.1",
+    "react-testing-library": "^5.4.4",
     "standard": "^12.0.1",
-    "tap": "^12.1.0",
-    "typescript": "^3.2.2"
+    "tap": "^12.1.0"
   }
 }

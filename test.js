@@ -184,6 +184,16 @@ test("should throw if callback is not a function", t => {
   fastify.close();
 });
 
+test("should serve /service-worker.js", t => {
+  t.plan(3);
+
+  const fastify = Fastify();
+  fastify.register(require("./app")).after(() => {
+    fastify.next("/hello");
+  });
+  testNextAsset(t, fastify, "/service-worker.js");
+});
+
 test("should serve /_next/* static assets", t => {
   t.plan(18);
 

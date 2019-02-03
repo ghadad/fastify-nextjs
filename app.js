@@ -3,6 +3,7 @@
 const assert = require("assert");
 const fp = require("fastify-plugin");
 const Next = require("next");
+const { join } = require("path");
 
 function fastifyNext(fastify, options, next) {
   const app = Next(
@@ -23,6 +24,10 @@ function fastifyNext(fastify, options, next) {
               reply.sent = true;
             })
           );
+          fastify.next("/service-worker.js", (app, req, reply) => {
+            const filePath = join(__dirname, ".next", req.raw.url);
+            app.serveStatic(req.raw, reply.res, filePath);
+          });
         });
       next();
     })

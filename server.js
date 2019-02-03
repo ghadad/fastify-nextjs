@@ -5,8 +5,6 @@ const fastify = require("fastify")();
 fastify.register(require("./app")).after(() => {
   fastify.next("/");
   fastify.next("/hello", (app, req, reply) => {
-    // your code
-    // `app` is the Next instance
     app.render(req.raw, reply.res, "/hello", req.query, {});
   });
 });

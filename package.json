@@ -33,16 +33,14 @@
     "url": "https://github.com/fastify/fastify-nextjs/issues"
   },
   "homepage": "https://github.com/fastify/fastify-nextjs#readme",
-  "peerDependencies": {
-    "next": "^7.0.2"
-  },
   "husky": {
     "hooks": {
       "pre-commit": "pretty-quick --staged"
     }
   },
   "dependencies": {
-    "fastify-plugin": "^1.2.1"
+    "fastify-plugin": "^1.2.1",
+    "next-offline": "^3.3.5"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",

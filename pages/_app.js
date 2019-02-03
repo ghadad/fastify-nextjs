@@ -2,7 +2,9 @@ import React, { Fragment } from "react";
 import App, { Container } from "next/app";
 import Head from "next/head";
 
-export default class MyApp extends App {
+import withReduxStore from "../lib/withReduxStore";
+
+class MyApp extends App {
   static async getInitialProps({ Component, router, ctx }) {
     let pageProps = {};
 
@@ -14,17 +16,21 @@ export default class MyApp extends App {
   }
 
   render() {
-    const { Component, pageProps } = this.props;
+    const { Component, pageProps, reduxStore } = this.props;
 
     return (
-      <Fragment>
-        <Head>
-          <title>Vested Finance</title>
-        </Head>
-        <Container>
-          <Component {...pageProps} />
-        </Container>
-      </Fragment>
+      <Provider store={reduxStore}>
+        <Fragment>
+          <Head>
+            <title>Vested Finance</title>
+          </Head>
+          <Container>
+            <Component {...pageProps} />
+          </Container>
+        </Fragment>
+      </Provider>
     );
   }
 }
+
+export default withReduxStore(App);

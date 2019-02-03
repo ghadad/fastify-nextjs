@@ -1,7 +1,6 @@
 const { PHASE_DEVELOPMENT_SERVER } = require("next/constants");
 const withBundleAnalyzer = require("@zeit/next-bundle-analyzer");
 const withOffline = require("next-offline");
-const withOptimizedImages = require("next-optimized-images");
 
 module.exports = (phase, { defaultConfig }) => {
   if (phase === PHASE_DEVELOPMENT_SERVER) {
@@ -22,7 +21,7 @@ module.exports = (phase, { defaultConfig }) => {
         return config;
       }
     };
-    return withBundleAnalyzer(withOptimizedImages(withOffline(devConfig)));
+    return withBundleAnalyzer(withOffline(devConfig));
   }
-  return withOffline(withOptimizedImages(defaultConfig));
+  return withOffline(defaultConfig);
 };

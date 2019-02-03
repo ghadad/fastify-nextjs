@@ -1,7 +1,10 @@
 import React, { Fragment } from "react";
 import App, { Container } from "next/app";
 import Head from "next/head";
+import { Provider } from "react-redux";
 
+import Title from "../components/Title";
+import Layout from "../components/Layout";
 import withReduxStore from "../lib/withReduxStore";
 
 class MyApp extends App {
@@ -12,25 +15,25 @@ class MyApp extends App {
       pageProps = await Component.getInitialProps(ctx);
     }
 
-    return { pageProps };
+    return { pageProps, path: router.pathname };
   }
 
   render() {
-    const { Component, pageProps, reduxStore } = this.props;
+    const { Component, pageProps, reduxStore, path } = this.props;
 
     return (
       <Provider store={reduxStore}>
         <Fragment>
-          <Head>
-            <title>Vested Finance</title>
-          </Head>
-          <Container>
-            <Component {...pageProps} />
-          </Container>
+          <Title path={path} />
+          <Layout path={path}>
+            <Container>
+              <Component {...pageProps} />
+            </Container>
+          </Layout>
         </Fragment>
       </Provider>
     );
   }
 }
 
-export default withReduxStore(App);
+export default withReduxStore(MyApp);

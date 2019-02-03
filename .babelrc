@@ -3,19 +3,19 @@
     "development": {
       "presets": ["next/babel"],
       "plugins": [
-        ["emotion", { "inline": true }]
+        ["emotion"]
       ]
     },
     "production": {
       "presets": ["next/babel"],
       "plugins": [
-        ["emotion", { "inline": true }]
+        ["emotion"]
       ]
     },
     "test": {
       "presets": [["next/babel", { "preset-env": { "modules": "commonjs" } }]],
       "plugins": [
-        ["emotion", { "inline": true }]
+        ["emotion"]
       ]
     }
   }

@@ -6,13 +6,13 @@ import { keyframes, css } from "@emotion/core";
 const basicStyles = css`
   background-color: white;
   color: cornflowerblue;
-  border: 1px solid lightgreen;
+  border: 1px solid darkgreen;
   border-right: none;
   border-bottom: none;
-  box-shadow: 5px 5px 0 0 lightgreen, 10px 10px 0 0 lightyellow;
+  box-shadow: 5px 5px 0 0 darkgreen, 10px 10px 0 0 lightyellow;
   transition: all 0.1s linear;
-  margin: 3rem 0;
-  padding: 1rem 0.5rem;
+  padding: 1rem;
+  margin: 3rem;
 `;
 const hoverStyles = css`
   &:hover {
@@ -52,15 +52,13 @@ const Animated = styled.div`
 `;
 
 const LandingBackground = styled.div`
-  display: flex;
-  flex-direction: column;
-  padding: 16px;
+  height: 100vh;
+  width: 100vw;
   background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
     url("/static/assets/images/landing-background.jpg");
   background-size: cover;
-  background-attachment: fixed;
   background-repeat: no-repeat;
-  background-position: bottom;
+  background-position: center;
 `;
 
 const DynamicCounter = dynamic(() => import("../components/Counter.jsx"), {
@@ -72,12 +70,13 @@ export default () => {
   const [count, setCount] = React.useState(0);
   return (
     <LandingBackground>
-      <Basic>Cool Styles</Basic>
+      <Basic>
+        <DynamicCounter />
+      </Basic>
       <Combined>
         With <code>:hover</code>.
       </Combined>
       <Animated animation={bounce}>Let's bounce.</Animated>
-      <DynamicCounter />
     </LandingBackground>
   );
 };

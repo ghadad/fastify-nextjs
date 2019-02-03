@@ -13,6 +13,7 @@ export default class MyDocument extends Document {
           <meta charSet="utf-8" />
           <meta name="description" content="Vested finance" />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <meta name="theme-color" content="#000000" />
           <link rel="icon" href="/static/assets/favicon.ico" />
           <link rel="manifest" href="/static/assets/site.webmanifest" />
         </Head>

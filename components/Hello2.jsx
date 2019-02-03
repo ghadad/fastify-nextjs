@@ -1,3 +1,9 @@
 import React from "react";
 
-export default () => <p>Loaded Hello2 Component</p>;
+export default () => {
+  const [userAgent, setUserAgent] = React.useState();
+  React.useEffect(() => {
+    setUserAgent(navigator.userAgent);
+  }, []);
+  return <p>User Agent: {userAgent}</p>;
+};

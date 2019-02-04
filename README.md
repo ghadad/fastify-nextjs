@@ -1,6 +1,7 @@
 # fastify-nextjs
 
 [![Greenkeeper badge](https://badges.greenkeeper.io/fastify/fastify-nextjs.svg)](https://greenkeeper.io/)
+[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 
 React server side rendering support for Fastify with [Next](https://github.com/zeit/next.js/#custom-server-and-routing) Framework.
 

@@ -10,6 +10,10 @@ function fastifyNext(fastify, options, next) {
     Object.assign({ dev: process.env.NODE_ENV !== "production" }, options)
   );
 
+  fastify.register(require("fastify-helmet"));
+  fastify.register(require("fastify-compress"));
+  fastify.register(require("fastify-response-time"));
+
   app
     .prepare()
     .then(() => {

@@ -1,5 +1,5 @@
 {
   "version": 2,
   "name": "fastify-nextjs",
-  "builds": [{ "src": "package.json", "use": "@now/next" }]
+  "builds": [{ "src": "package.json", "use": "@now/static-build" }]
 }

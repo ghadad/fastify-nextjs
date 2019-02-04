@@ -28,6 +28,10 @@ function fastifyNext(fastify, options, next) {
             const filePath = join(__dirname, ".next", req.raw.url);
             app.serveStatic(req.raw, reply.res, filePath);
           });
+          fastify.next("/static/*", (app, req, reply) => {
+            const filePath = join(__dirname, "static", req.params["*"]);
+            app.serveStatic(req.raw, reply.res, filePath);
+          });
         });
       next();
     })

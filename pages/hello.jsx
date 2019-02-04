@@ -8,12 +8,18 @@ const DynamicComponentWithCustomLoading = dynamic(
   }
 );
 
+const DynamicCounter = dynamic(() => import("../components/Counter.jsx"), {
+  loading: () => <p>...</p>,
+  ssr: false
+});
+
 export default class extends React.Component {
   render() {
     return (
       <div>
         Hello UserAgent {JSON.stringify(this.props)}
         <DynamicComponentWithCustomLoading />
+        <DynamicCounter />
       </div>
     );
   }

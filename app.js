@@ -12,7 +12,6 @@ function fastifyNext(fastify, options, next) {
 
   fastify.register(require("fastify-helmet"));
   fastify.register(require("fastify-compress"));
-  fastify.register(require("fastify-response-time"));
 
   app
     .prepare()

@@ -4,6 +4,7 @@ import { Provider } from "react-redux";
 import GlobalStyles from "../components/GlobalStyles";
 import Title from "../components/Title";
 import withReduxStore from "../lib/withReduxStore";
+import Navbar from "../components/Navbar";
 
 class MyApp extends App {
   static async getInitialProps({ Component, router, ctx }) {
@@ -24,6 +25,7 @@ class MyApp extends App {
           <Title path={path} />
           <GlobalStyles />
           <Container>
+            <Navbar />
             <Component {...pageProps} />
           </Container>
         </Fragment>

@@ -64,10 +64,11 @@ export const resetCount = () => dispatch => {
   return dispatch({ type: actionTypes.RESET });
 };
 
+const composer =
+  process.env.NODE_ENV === "development"
+    ? composeWithDevTools(applyMiddleware(thunkMiddleware))
+    : applyMiddleware(thunkMiddleware);
+
 export function initializeStore(initialState = exampleInitialState) {
-  return createStore(
-    reducer,
-    initialState,
-    composeWithDevTools(applyMiddleware(thunkMiddleware))
-  );
+  return createStore(reducer, initialState, composer);
 }

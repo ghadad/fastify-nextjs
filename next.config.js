@@ -1,5 +1,4 @@
 const { PHASE_DEVELOPMENT_SERVER } = require("next/constants");
-const withBundleAnalyzer = require("@zeit/next-bundle-analyzer");
 const withOffline = require("next-offline");
 
 module.exports = (phase, { defaultConfig }) => {
@@ -21,7 +20,7 @@ module.exports = (phase, { defaultConfig }) => {
         return config;
       }
     };
-    return withBundleAnalyzer(withOffline(devConfig));
+    return withOffline(devConfig);
   }
   return withOffline(defaultConfig);
 };

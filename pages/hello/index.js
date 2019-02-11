@@ -2,13 +2,13 @@ import React from "react";
 import dynamic from "next/dynamic";
 
 const DynamicComponentWithCustomLoading = dynamic(
-  () => import("../components/Hello2.jsx"),
+  () => import("../../components/Hello2.jsx"),
   {
     loading: () => <p>...</p>
   }
 );
 
-const DynamicCounter = dynamic(() => import("../components/Counter.jsx"), {
+const DynamicCounter = dynamic(() => import("../../components/Counter.jsx"), {
   loading: () => <p>...</p>,
   ssr: false
 });

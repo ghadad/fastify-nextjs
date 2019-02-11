@@ -74,3 +74,8 @@ out
 bundles
 
 dist
+
+# Serverless directories
+.serverless
+
+jspm_packages

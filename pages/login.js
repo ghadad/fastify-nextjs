@@ -4,11 +4,9 @@ class LoginPage extends React.Component {
   render() {
     return (
       <div>
-        <button>
-          Login with facebook
-        </button>
+        <button>Login with facebook</button>
       </div>
-    )
+    );
   }
 }
 

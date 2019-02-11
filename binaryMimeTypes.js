@@ -15,5 +15,6 @@ module.exports = [
   "text/javascript",
   "text/plain",
   "text/text",
-  "text/xml"
+  "text/xml",
+  "image/x-icon"
 ];

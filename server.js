@@ -7,9 +7,11 @@ const app = next({ dev });
 const handle = app.getRequestHandler();
 const { parse } = require("url");
 const { join } = require("path");
+const compression = require("compression");
 
 const server = express();
 const route = pathMatch();
+server.use(compression());
 server.use("/_next", express.static(path.join(__dirname, ".next")));
 server.get("/", (req, res) => app.render(req, res, "/"));
 server.get("/service-worker.js", (req, res) => {

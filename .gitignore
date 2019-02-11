@@ -79,3 +79,5 @@ dist
 .serverless
 
 jspm_packages
+
+secrets.json
